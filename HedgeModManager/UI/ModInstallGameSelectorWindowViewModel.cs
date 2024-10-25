@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace HedgeModManager.UI
 {
-    public class GBModGameSelectorWindowViewModel
+    public class ModInstallGameSelectorWindowViewModel
     {
         public ObservableCollection<GameInstall> Games { get; set; } = new ObservableCollection<GameInstall>();
         public GameInstall SelectedGame { get; set; }

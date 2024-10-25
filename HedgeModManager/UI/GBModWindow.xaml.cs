@@ -51,20 +51,6 @@ namespace HedgeModManager.UI
             InitializeComponent();
         }
 
-        public Tuple<GameInstall, bool?> SelectGameInstall()
-        {
-            // Get compaitble games
-            var compatibleGames = Games.GetSupportedGames().Where(t => t.GBProtocol == Protocol).ToList();
-            List<GameInstall> compatibleGameInstalls = HedgeApp.GameInstalls.Where(t => compatibleGames.Contains(t.Game)).ToList();
-
-            if (compatibleGameInstalls.Count <= 1)
-                return new(compatibleGameInstalls.FirstOrDefault(), true);
-
-            var selector = new GBModGameSelectorWindow(compatibleGameInstalls);
-            selector.ShowDialog();
-            return new (selector.SelectedGame, selector.DialogResult);
-        }
-
         private void Screenshot_Click(object sender, RoutedEventArgs e)
         {
             var shot = (GBAPIScreenshotData)((Button)sender).Tag;
@@ -107,7 +93,12 @@ namespace HedgeModManager.UI
             DownloadButton.Visibility = Visibility.Collapsed;
             Progress.Visibility = Visibility.Visible;
 
-            var (gameInstall, result) = SelectGameInstall();
+            var compatibleGames = Games.GetSupportedGames()
+                .Where(t => t.GBProtocol == Protocol)
+                .ToList();
+
+            var (gameInstall, result) = 
+                ModInstallGameSelectorWindow.SelectGameInstall(compatibleGames);
 
             if (gameInstall == null)
             {
