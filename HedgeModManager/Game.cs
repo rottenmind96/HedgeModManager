@@ -151,7 +151,7 @@ namespace HedgeModManager
             ModLoader = ModLoaders.HE2ModLoader,
             CodesURL = Resources.URL_RANGERS_CODES,
             GamePaths = [Path.Combine("SonicFrontiers", "SonicFrontiers.exe")],
-            Timestamps = [0x9C0C5165]
+            Timestamps = [0x65510C9C]
         };
 
         // TODO: implement loader.
@@ -188,7 +188,7 @@ namespace HedgeModManager
             ModLoader = ModLoaders.HE2ModLoaderD3D11,
             CodesURL = Resources.URL_MILLER_SHADOW_CODES,
             GamePaths = [Path.Combine("SONIC_X_SHADOW_GENERATIONS", "SONIC_X_SHADOW_GENERATIONS.exe")],
-            Timestamps = [0x66F609C2]
+            Timestamps = [0x66F609C2, 0x66F55857]
         };
 
         public static IEnumerable<Game> GetSupportedGames()
