@@ -116,7 +116,7 @@ namespace HedgeModManager
             CodesURL = Resources.URL_RAINBOW_CODES,
             GamePaths = [
                 Path.Combine("SonicColorsUltimate", "exec", "SonicColorsUltimate.exe"),
-                Path.Combine("rainbow Shipping", "Sonic Colors - Ultimate.exe")
+                Path.Combine("SonicColorsUltimate", "rainbow Shipping", "Sonic Colors - Ultimate.exe")
             ]
         };
 
@@ -150,7 +150,8 @@ namespace HedgeModManager
             Is64Bit = true,
             ModLoader = ModLoaders.HE2ModLoader,
             CodesURL = Resources.URL_RANGERS_CODES,
-            GamePaths = [Path.Combine("SonicFrontiers", "SonicFrontiers.exe")]
+            GamePaths = [Path.Combine("SonicFrontiers", "SonicFrontiers.exe")],
+            Timestamps = [0x9C0C5165]
         };
 
         // TODO: implement loader.
@@ -249,7 +250,7 @@ namespace HedgeModManager
         public bool Is64Bit = false;
         public string CodesURL;
         public string[] GamePaths = [];
-        public int[] Timestamps = null;
+        public uint[] Timestamps = null;
 
         public override string ToString() => Localise("Game" + GameName, GameName);
     }

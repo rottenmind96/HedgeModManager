@@ -145,7 +145,12 @@ namespace HedgeModManager
 
                 foreach (string gamePath in game.GamePaths)
                 {
-                    var fullPath = Path.Combine(installation.InstallLocation, gamePath);
+                    string path = gamePath;
+                    // Remove first folder from path
+                    if (path.Contains(Path.DirectorySeparatorChar))
+                        path = path.Substring(path.IndexOf(Path.DirectorySeparatorChar) + 1);
+
+                    var fullPath = Path.Combine(installation.InstallLocation, path);
                     if (File.Exists(fullPath))
                         games.Add(new GameInstall(game, null, fullPath, GameLauncher.Epic));
                 }
