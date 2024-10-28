@@ -88,6 +88,19 @@ namespace HedgeModManager
                 var file = new IniFile(stream);
                 IniSerializer.Deserialize(this, file);
             }
+
+            // Remove corrupted ModsDbIni
+            try
+            {
+                if (ModsDbIni != null && Path.GetInvalidPathChars().Any(ModsDbIni.Contains))
+                    ModsDbIni = null;
+
+                Path.GetFullPath(ModsDbIni);
+            }
+            catch
+            {
+                ModsDbIni = null;
+            }
         }
 
         public void Save(string path)
