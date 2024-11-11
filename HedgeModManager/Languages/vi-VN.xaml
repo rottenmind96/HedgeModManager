@@ -246,7 +246,7 @@
     <system:String x:Key="ExceptionWindowCrash"           >Hedge Mod Manager bị lỗi Ngoại Lệ!</system:String>
     <system:String x:Key="ExceptionWindowUnhandled"       >Hedge Mod Manager bị lỗi!</system:String>
     <system:String x:Key="ExceptionWindowButtonCopyLog"   >Sao chép ghi chú vào khay nhớ tạm</system:String>
-    <system:String x:Key="ExceptionWindowButtonIgnore"    >Không quan tâm & Thoát</system:String>
+    <system:String x:Key="ExceptionWindowButtonIgnore"    >Không quan tâm &amp; Thoát</system:String>
     <system:String x:Key="ExceptionWindowButtonReport"    >Báo cáo lên GitHub</system:String>
     <system:String x:Key="ExceptionWindowNewUpdateTitle"  >Có bản cập nhật mới!</system:String>
     <system:String x:Key="ExceptionWindowNewUpdateText" xml:space="preserve" >Phiên bản này của Hedge Mod Manager cũ rồi.&#x0a;Bạn nên cập nhật trước tiên để xem còn sự cố nữa hay không.&#x0a;Bạn có muốn cập nhật luôn không?</system:String>
